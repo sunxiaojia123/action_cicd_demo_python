@@ -25,10 +25,10 @@ jobs:
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
       with:
-        # host: ${{ secrets.ALIYUN_HOST }}
-        # username: ${{ secrets.ALIYUN_USERNAME }}
+        host: ${{ secrets.ALIYUN_HOST }}
+        username: ${{ secrets.ALIYUN_USERNAME }}
         key: ${{ secrets.ALIYUN_SSH_KEY }}
-        # port: ${{ secrets.ALIYUN_PORT }} # 如果修改了默认的 SSH 端口，请在此修改
+        port: ${{ secrets.ALIYUN_PORT }} # 如果修改了默认的 SSH 端口，请在此修改
         script: |
           # 项目目录，替换为您的项目真实路径
           cd /workdir/hello_python
