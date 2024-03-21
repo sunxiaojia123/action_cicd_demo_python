@@ -43,5 +43,5 @@ jobs:
           # 运行新的 Docker 容器，使用新的镜像
           docker run -d --name ${{ env.IMAGE_AND_CONTAINER_NAME }} ${{ env.IMAGE_AND_CONTAINER_NAME }}:${{ env.CURRENT_DATE }}
 
-          # 清理旧的镜像，可选
+          # 清理旧的镜像，可选 
           # docker image prune -a -f --filter "until=24h"
