@@ -19,7 +19,7 @@ jobs:
     - name: Set environment variables
       run: |
         echo "IMAGE_AND_CONTAINER_NAME=hello_py" >> $GITHUB_ENV
-        echo "TIMESTAMP=$(TZ='Asia/Shanghai' date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        echo "CURRENT_DATE=$(TZ='Asia/Shanghai' date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
     # SSH 登录到服务器并部署
     - name: Deploy to Server
