@@ -30,8 +30,11 @@ jobs:
         key: ${{ secrets.ALIYUN_SSH_KEY }}
         port: ${{ secrets.ALIYUN_PORT }} # 如果修改了默认的 SSH 端口，请在此修改
         script: |
-          # 项目目录，替换为您的项目真实路径
-          cd ~/workdir/hello_python
+          # 项目目录
+          cd ~/workdir/action_cicd_demo_python
+          
+          # 更新代码
+          git pull
           
           # 创建镜像，使用基础名加上时间戳
           docker build -t ${{ env.IMAGE_AND_CONTAINER_NAME }}:${{ env.CURRENT_DATE }} .
