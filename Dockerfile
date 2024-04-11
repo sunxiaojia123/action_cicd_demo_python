@@ -23,8 +23,9 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # 复制依赖文件并安装依赖
+# 使用阿里云的镜像源
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 # 将当前目录下的所有文件复制到工作目录中（排除不必要的文件）
 COPY . .
