@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 # 创建 FastAPI 实例
 app = FastAPI()
+
+app.mount("/", StaticFiles(directory="html", html=True), name="static")
 
 
 # 创建一个简单的路由
