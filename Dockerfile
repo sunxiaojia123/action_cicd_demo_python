@@ -27,7 +27,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 将当前目录下的所有文件复制到工作目录中（排除不必要的文件）
-COPY main.py .
+COPY . .
 
 # 清理不需要的文件和缓存
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
